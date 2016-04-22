@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IFE第二阶段Task13Demo</title>
+</head>
+<body>
+    <label for="aqi-input">请输入北京今天空气质量<input type="text" id="aqi-input" autofocus="autofocus"></label>
+    <button id="button">确认填写</button>
+    <div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+    <script>
+        (function () {
+            var $ = function (id) {
+              return document.getElementById(id);
+            };
+            var btn = $('button'), input = $('aqi-input'),display = $('aqi-display');
+            function getvalue(e) {
+                if(input.value >= 0 && input.value <= 1000) {
+                    display.innerHTML = input.value;
+                }
+                else {
+                    display.innerHTML = '您输入的不是正确的AQI数值，请输入0-1000的数值';
+                }
+            }
+            var click = btn.addEventListener('click', function (event) {
+                getvalue(event);
+            });
+            var enter = input.addEventListener('keyup', function (event) {
+               if(event.keyCode === 13) {
+                   getvalue(event);
+               }
+            });
+        })();
+    </script>
+</body>
+</html>

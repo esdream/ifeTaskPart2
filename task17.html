@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ife task17 demo</title>
+    <script src="src/task17.js"></script>
+</head>
+<body>
+    <fieldset id="form-gra-time">
+        <legend>请选择日期粒度:</legend>
+        <label>
+            日<input type="radio" name="gra-time" value="day">
+        </label>
+        <label>
+            周<input type="radio" name="gra-time" value="week">
+        </label>
+        <label>
+            月<input type="radio" name="gra-time" value="month">
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>请选择查看的城市:</legend>
+        <select id="city-select">
+            <option>北京</option>
+        </select>
+    </fieldset>
+    <div class="aqi-chart-wrap"></div>
+</body>
+</html>
